@@ -1,0 +1,75 @@
+site_name: My Homelab Docs
+site_url: https://myhomelab.org
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  language: en
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tracking.scroll
+    - navigation.tracking.click
+    - navigation.tracking.hover
+    - navigation.tracking.focus
+    - navigation.tracking.active
+    - navigation.tracking.last
+    - navigation.tracking.first
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - search.filter
+    - search.share
+    - header.autohide
+    - navigation.footer
+plugins:
+  - search
+  - section-index
+  - tags:
+      tags_file: 00_About/tags.md
+extra_css:
+  - stylesheets/extra.css
+nav:
+  - About: 
+    - 00_About/index.md
+    - Tags: 00_About/tags.md
+  - Architecture:
+    - 01_architecture/index.md
+    - Hardware: 01_architecture/hardware.md
+  - Infrastructure:
+    - 02_infrastructure/index.md
+  - Compute:
+    - 03_compute/index.md
+  - Services:
+    - 04_services/index.md
+  - Operations:
+    - 05_operations/index.md
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin 
+      link: https://www.linkedin.com/in/linus-bachert/
+    - icon: fontawesome/brands/github 
+      link: https://github.com/LinusB
