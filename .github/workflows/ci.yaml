@@ -1,4 +1,4 @@
-name: Deploy MkDocs site to GitHub Pages
+name: Deploy Zensical site to GitHub Pages
 
 on:
   push:
@@ -31,24 +31,24 @@ jobs:
         with:
           python-version: '3.x'
 
-      # Schnelles Bauen dank Cache aus der offiziellen Doku
+      # Caching Zensical
       - name: Configure Cache
         run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
       - uses: actions/cache@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
+          key: zensical-${{ env.cache_id }}
           path: ~/.cache 
           restore-keys: |
-            mkdocs-material-
+            zensical-
 
-      # Hier installieren wir MkDocs, das Theme UND deine Plugins!
+      # Installation Zensical und Plugins
       - name: Install dependencies
         run: |
-          pip install "mkdocs-material[recommended]" mkdocs-section-index
+          pip install zensical
 
-      - name: Build MkDocs site
+      - name: Build Zensical site
         run: |
-          mkdocs build
+          zensical build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
